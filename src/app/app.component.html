@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <nav>
+    <a>Navigation:</a>
+    <ul>
+      <li><a [routerLink]="['home']">Home</a></li>
+      <li><a [routerLink]="['about']">About</a></li>
+      <li><a [routerLink]="['contact']">Contact us</a></li>
+      <li><a [routerLink]="['login']">Login</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
