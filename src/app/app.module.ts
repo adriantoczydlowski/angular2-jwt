@@ -13,12 +13,14 @@ import { Login } from './auth/login.component';
 import { DatasetSelectComponent } from './dataset-select/dataset-select.component';
 import { AuthGuard } from './auth/auth.guard';
 import { routes } from './app.routing';
+import { keyValueFilterPipe } from './components/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatasetSelectComponent,
     AboutComponent,
+    keyValueFilterPipe,
     ContactComponent,
     Home,
     Login
