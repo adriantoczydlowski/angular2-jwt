@@ -14,6 +14,8 @@ import { DatasetSelectComponent } from './dataset-select/dataset-select.componen
 import { AuthGuard } from './auth/auth.guard';
 import { routes } from './app.routing';
 import { keyValueFilterPipe } from './components/about.component';
+import { MatrixGraphComponent } from './components/matrix-graph/matrix-graph.component';
+import { MatrixGraphContainerComponent } from './components/matrix-graph-container/matrix-graph-container.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { keyValueFilterPipe } from './components/about.component';
     keyValueFilterPipe,
     ContactComponent,
     Home,
-    Login
+    Login,
+    MatrixGraphComponent,
+    MatrixGraphContainerComponent
   ],
   imports: [
     BrowserModule,
