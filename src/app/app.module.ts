@@ -16,6 +16,7 @@ import { routes } from './app.routing';
 import { keyValueFilterPipe } from './components/about.component';
 import { MatrixGraphComponent } from './components/matrix-graph/matrix-graph.component';
 import { MatrixGraphContainerComponent } from './components/matrix-graph-container/matrix-graph-container.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatrixGraphContainerComponent } from './components/matrix-graph-contain
     Home,
     Login,
     MatrixGraphComponent,
-    MatrixGraphContainerComponent
+    MatrixGraphContainerComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,

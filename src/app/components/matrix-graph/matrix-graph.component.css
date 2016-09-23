@@ -1,4 +1,70 @@
-line {
-  stroke-width: 1px;
-  stroke: white;
+svg .axis path,
+svg .axis line {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+    shape-rendering: crispEdges;
+}
+
+svg .axis text {
+    font-size: 11px;
+    fill: rgba(0, 0, 0, 0.9);
+}
+
+svg .grid .tick {
+    stroke: rgba(0, 0, 0, 0.1);
+    opacity: 0.3;
+}
+
+svg .grid path {
+    stroke-width: 0;
+}
+
+svg .grid .tick {
+    stroke: rgba(0, 0, 0, 0.1);
+    opacity: 0.3;
+}
+
+svg .grid path {
+    stroke-width: 0;
+}
+svg .color-label{
+    display: inline;
+}
+
+svg .row,
+svg .column {
+    &:hover {
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+
+svg .header {
+    font-size: 14px;
+}
+
+svg .background {
+  fill: #eee;
+}
+
+svg line {
+  stroke: #fff;
+  stroke-opacity: 1;
+}
+
+svg text.active {
+  font-weight: bold;
+}
+
+svg text.cell-text {
+    fill: white;
+    font-size: 20px;
+}
+
+svg rect.highlight {
+    fill: none;
+    stroke: #222;
+    stroke-width: 2;
+    stroke-linecap: "square";
 }
