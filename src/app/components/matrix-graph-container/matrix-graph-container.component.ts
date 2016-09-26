@@ -83,32 +83,42 @@ import { select } from 'ng2-redux';
 export class MatrixGraphContainerComponent implements OnInit {
   //@select('getConfig') config$;
   data: any;
+  showResult: any;
   constructor() {
+    this.showResult = {
+      title: 'show results',
+      value: true
+    };
     this.data = [
       {
         id: 1,
         name: 'drg1',
-        count: 25
+        count: 25,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla id augue imperdiet pulvinar. Suspendisse a tempor risus. Etiam id leo vehicula, ullamcorper velit et, tempor dolor. Morbi rhoncus lacus ut porta porttitor. Nam laoreet hendrerit est ac pulvinar. Nulla sagittis, purus ut rhoncus suscipit, lorem enim iaculis odio, in aliquet ex lacus vel felis. Quisque tempor faucibus dui id lobortis. Pellentesque cursus ut eros ut auctor. Sed leo elit, mattis et imperdiet non, ultrices non metus. Curabitur vitae finibus enim. Fusce sed diam nisi. Maecenas justo dolor, dapibus id nisl nec, dapibus luctus ante. Curabitur porttitor odio vitae risus suscipit gravida.'
       },
       {
         id: 2,
         name: 'drg2',
-        count: 44
+        count: 44,
+        description: 'Aliquam bibendum mauris ac porttitor fermentum. Sed faucibus, sapien sed facilisis aliquam, mi metus efficitur tellus, non euismod mauris diam et velit. Suspendisse vitae fringilla massa. Nulla nec arcu eu augue fringilla porta. Pellentesque congue nisi sem, vel sodales tellus scelerisque fringilla. Mauris egestas in ligula aliquet vestibulum. Maecenas convallis ornare turpis quis vulputate. Nunc ac ultricies felis, ut malesuada ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean pretium neque ut ante ultrices, quis rutrum justo aliquet. Nullam semper ipsum sed urna eleifend aliquam. Integer tincidunt, leo in lobortis blandit, massa dui pellentesque nisi, venenatis ultricies magna lorem non leo.'
       },
       {
         id: 3,
         name: 'drg3',
-        count: 33
+        count: 33,
+        description: 'short description asd asdasda asdas dsadasd'
       },
       {
         id: 4,
         name: 'drg4',
-        count: 11
+        count: 11,
+        description: 'short2 description asd asdasda asdas dsadasd'
       },
       {
         id: 5,
         name: 'drg5',
-        count: 2
+        count: 2,
+        description: 'short3 description asd asdasda asdas dsadasd'
       }
     ];
     // this.config = {

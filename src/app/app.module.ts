@@ -17,6 +17,7 @@ import { keyValueFilterPipe } from './components/about.component';
 import { MatrixGraphComponent } from './components/matrix-graph/matrix-graph.component';
 import { MatrixGraphContainerComponent } from './components/matrix-graph-container/matrix-graph-container.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     Login,
     MatrixGraphComponent,
     MatrixGraphContainerComponent,
-    BarChartComponent
+    BarChartComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,

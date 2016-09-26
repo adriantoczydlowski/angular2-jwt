@@ -5,13 +5,13 @@ import {
   ElementRef,
   ViewEncapsulation
 } from '@angular/core';
-import { select, selectAll } from "d3-selection";
+import { select, selectAll, event } from "d3-selection";
 import "d3-selection-multi";
 import { scaleOrdinal, scaleLinear, scaleBand } from "d3-scale";
 import { range, max } from "d3-array";
 import { axisBottom, axisLeft } from "d3-axis";
 //import { body as tip } from "@redsift/d3-rs-tip";
-var tip = require("@redsift/d3-rs-tip");
+//var tip = require("@redsift/d3-rs-tip");
 
 export const BAR_COLOR = 'rgb(0, 113, 188)';
 export const BAR_HOVER_COLOR = 'rgb(181, 95, 156)';
@@ -52,6 +52,7 @@ export class BarChartComponent implements OnInit {
     this.setup();
     this.buildSVG();
     this.draw();
+    this.tooltips();
    }
 
    private setup(): void {
@@ -82,14 +83,36 @@ export class BarChartComponent implements OnInit {
       })
       .append('g')
         .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
+  }
 
-    var tip = tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
-      .html((d) => {
-        return "<strong>Frequency:</strong> <span style='color:red'>" + d.count + "</span>";
-      })
-    this.svg.call(tip);
+  private tooltips() {
+    let tooltip = this.host        
+      .append('div')                             
+      .attr('class', 'tooltip');                 
+                
+    tooltip.append('div')                        
+      .attr('class', 'description');      
+
+    selectAll('.axis.axis--x .tick')
+      .on('mouseout', this.hideTooltip)
+      .on('mouseover', this.showTooltip);             
+  }
+
+  private hideTooltip = (d) => {
+    let tooltip = select('div.tooltip');
+    tooltip.style('display', 'none');
+  }
+
+  private showTooltip = (d) => {
+    let tooltip = select('div.tooltip');
+    let data = this.data.find(x => x.name == d);
+    tooltip.select('.description').html(data.description);
+    tooltip
+      .styles({
+        'display': 'block',
+        'top': `${event.layerY + 10}px`,
+        'left': `${event.layerX + 10}px`
+      });
   }
 
   private draw() {
